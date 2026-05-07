@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yusuf Maulana | AgroBerjaya</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f7fff4;
+    color:#173817;
+    overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#c9ff52,#4d9a2a);
+    border-radius:20px;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 8%;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:800;
+    color:#1b5e20;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#214221;
+    margin-left:25px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#d9b300;
+}
+
+/* HERO */
+
+header{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.45)),
+    url('foto-bersama.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    padding:30px;
+}
+
+.hero{
+    max-width:900px;
+    color:white;
+    animation:fadeUp 1s ease;
+}
+
+.hero img{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+    box-shadow:0 10px 35px rgba(0,0,0,0.4);
+    margin-bottom:25px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(10px);
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.hero h1{
+    font-size:clamp(3rem,7vw,6rem);
+    line-height:1;
+    margin-bottom:18px;
+    font-weight:800;
+}
+
+.hero p{
+    font-size:1.2rem;
+    opacity:0.95;
+    margin-bottom:35px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:15px 28px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    margin:8px;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#d9ff63;
+    color:#173817;
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px);
+}
+
+/* SECTION */
+
+section{
+    padding:110px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:15px;
+    color:#1b5e20;
+    font-weight:800;
+}
+
+.section-subtitle{
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:55px;
+    color:#557055;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:35px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+.about-content{
+    background:white;
+    padding:45px;
+    border-radius:35px;
+    box-shadow:0 15px 45px rgba(0,0,0,0.08);
+}
+
+.about-content h3{
+    font-size:2rem;
+    color:#1b5e20;
+    margin-bottom:18px;
+}
+
+.stats{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.stat{
+    background:#f2ffd8;
+    padding:20px;
+    border-radius:25px;
+    text-align:center;
+}
+
+.stat h2{
+    color:#1b5e20;
+    font-size:2rem;
+}
+
+/* SKILLS */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:white;
+    padding:35px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    transition:0.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+}
+
+.skill-icon{
+    font-size:3rem;
+    margin-bottom:18px;
+}
+
+.skill-card h3{
+    margin-bottom:12px;
+    color:#1b5e20;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:30px;
+    min-height:320px;
+    box-shadow:0 18px 45px rgba(0,0,0,0.12);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.1);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.8),rgba(0,0,0,0.1));
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:25px;
+    color:white;
+}
+
+.overlay h3{
+    font-size:1.5rem;
+    margin-bottom:8px;
+}
+
+/* PROJECT */
+
+.project-box{
+    background:linear-gradient(135deg,#173817,#5ca130);
+    padding:70px;
+    border-radius:40px;
+    text-align:center;
+    color:white;
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+.project-box h2{
+    font-size:3rem;
+    margin-bottom:18px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:55px;
+    border-radius:35px;
+    text-align:center;
+    box-shadow:0 18px 45px rgba(0,0,0,0.08);
+}
+
+.contact-box h2{
+    color:#1b5e20;
+    margin-bottom:15px;
+}
+
+.contact-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:16px 28px;
+    border-radius:999px;
+    background:#d7ff67;
+    color:#173817;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.contact-btn:hover{
+    background:#173817;
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:80px;
+    background:#102610;
+    color:white;
+    text-align:center;
+    padding:35px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    section{
+        padding:90px 6%;
+    }
+
+    .project-box{
+        padding:45px 25px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">🌱 AgroBerjaya</div>
+
+<div class="menu">
+<a href="#about">Tentang</a>
+<a href="#skills">Skills</a>
+<a href="#gallery">Galeri</a>
+<a href="#project">Project</a>
+<a href="#contact">Kontak</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<header>
+
+<div class="hero">
+
+<img src="profile.jpg" alt="Profile Yusuf">
+
+<div class="badge">
+Modern Agroteknologi Website
+</div>
+
+<h1>Yusuf Maulana</h1>
+
+<p>
+Semangat belajar, bertani, dan berkembang bersama dunia agroteknologi modern.
+</p>
+
+<a href="#gallery" class="hero-btn btn-primary">
+Lihat Galeri
+</a>
+
+<a href="#contact" class="hero-btn btn-secondary">
+Hubungi Saya
+</a>
+
+</div>
+
+</header>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">Tentang Saya</h2>
+
+<p class="section-subtitle">
+Saya memiliki ketertarikan dalam bidang agroteknologi dan kegiatan budidaya tanaman.
+</p>
+
+<div class="about">
+
+<div class="about-image">
+<img src="foto-bersama.jpg" alt="">
+</div>
+
+<div class="about-content">
+
+<h3>Halo, Saya Yusuf 👋</h3>
+
+<p>
+Saya menyukai kegiatan praktik agroteknologi, terutama dalam proses budidaya tanaman kangkung mulai dari persiapan media tanam, penyiraman, hingga penanaman benih. Saya percaya bahwa pertanian modern membutuhkan ketelitian, semangat, dan proses belajar yang terus berkembang.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<h2>🌱</h2>
+<p>Budidaya Tanaman</p>
+</div>
+
+<div class="stat">
+<h2>💧</h2>
+<p>Perawatan Media</p>
+</div>
+
+<div class="stat">
+<h2>🧪</h2>
+<p>Agroteknologi</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<p class="section-subtitle">
+Kemampuan dan pengalaman saya dalam bidang agroteknologi.
+</p>
+
+<div class="skills">
+
+<div class="skill-card">
+
+<div class="skill-icon">🌱</div>
+
+<h3>Budidaya Tanaman</h3>
+
+<p>
+Memahami proses dasar budidaya tanaman mulai dari persiapan hingga perawatan.
+</p>
+
+</div>
+
+<div class="skill-card">
+
+<div class="skill-icon">🧪</div>
+
+<h3>Praktik Agroteknologi</h3>
+
+<p>
+Memiliki pengalaman praktik dalam kegiatan pertanian modern dan pengelolaan tanaman.
+</p>
+
+</div>
+
+<div class="skill-card">
+
+<div class="skill-icon">💧</div>
+
+<h3>Perawatan Tanaman</h3>
+
+<p>
+Konsisten menjaga kelembaban dan pertumbuhan tanaman agar berkembang optimal.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<h2 class="section-title">Galeri Kegiatan</h2>
+
+<p class="section-subtitle">
+Dokumentasi kegiatan praktik agroteknologi dan budidaya tanaman.
+</p>
+
+<div class="gallery">
+
+<div class="gallery-item">
+
+<img src="menanam-benih.jpg" alt="">
+
+<div class="overlay">
+<h3>Menanam Benih Kangkung</h3>
+<p>Proses awal penanaman benih kangkung.</p>
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="membuat-lubang.jpg" alt="">
+
+<div class="overlay">
+<h3>Membuat Lubang Tanam</h3>
+<p>Persiapan media tanam sebelum benih dimasukkan.</p>
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="penyiraman.jpg" alt="">
+
+<div class="overlay">
+<h3>Penyiraman Awal</h3>
+<p>Penyiraman media sebelum benih ditanam.</p>
+</div>
+
+</div>
+
+<div class="gallery-item">
+
+<img src="foto-bersama.jpg" alt="">
+
+<div class="overlay">
+<h3>Foto Bersama</h3>
+<p>Dokumentasi kegiatan praktik agroteknologi.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECT -->
+
+<section id="project">
+
+<h2 class="section-title">Project</h2>
+
+<p class="section-subtitle">
+Project sederhana yang saya kerjakan dalam bidang budidaya tanaman.
+</p>
+
+<div class="project-box">
+
+<h2>Project Kangkung 🥬</h2>
+
+<p>
+Project ini berfokus pada proses budidaya kangkung mulai dari pembuatan lubang tanam, penyiraman media, hingga penanaman benih sebagai bagian dari praktik agroteknologi modern.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Kontak</h2>
+
+<p class="section-subtitle">
+Terbuka untuk diskusi dan berbagi pengalaman tentang dunia agroteknologi.
+</p>
+
+<div class="contact-box">
+
+<h2>📞 Hubungi Saya</h2>
+
+<p>
+Mari terhubung dan berbagi pengalaman tentang budidaya tanaman dan agroteknologi.
+</p>
+
+<a href="https://wa.me/6285219314984" class="contact-btn">
+WhatsApp: 085219314984
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Yusuf Maulana — AgroBerjaya 🌱
+</p>
+
+</footer>
+
+</body>
+</html>
